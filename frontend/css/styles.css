@@ -1,0 +1,20 @@
+.container-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+body {
+    color: white;
+}
+.form-control {
+    background-color: #343a40;
+    color: white;
+}
+.custom-bg-subtle {
+    background-color: rgba(245, 245, 245, 0.1); 
+}

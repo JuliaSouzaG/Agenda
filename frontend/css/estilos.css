@@ -1,0 +1,65 @@
+.centro {
+    width: 600px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+
+.input-search {
+    border: 0 none;
+    outline: 0;
+    color: white;
+    caret-color: #0d6efd;
+}
+
+.font-tiny {
+    font-size: 13px;
+}
+
+.btn {
+    --bs-btn-color: #a7a7a7;
+}
+
+a {
+    text-decoration: none;
+}
+
+.circle {
+    width: 90px;
+    height: 90px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-back {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns {
+    width: 85px;
+}
+
+.bg-black {
+    --bs-table-bg: #000000;
+    --bs-table-border-color: #252525;
+}
+
+input, textarea {
+    border: none;
+    outline: 0;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    width: 100%;
+    caret-color: #0d6efd;
+}
+
