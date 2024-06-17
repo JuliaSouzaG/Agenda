@@ -8,6 +8,7 @@ export class AgendaModel extends Model {
     private _nome!: string;
     private _telefone!: string;
     private _endereco!: string;
+    private _informacoes!: string;
 
 
     get id(): number {
@@ -22,6 +23,9 @@ export class AgendaModel extends Model {
     get endereco(): string {
         return this._endereco;
     }
+    get informacoes(): string {
+        return this._informacoes;
+    }
 
     set nome(value: string) {
         this._nome = value;
@@ -31,6 +35,9 @@ export class AgendaModel extends Model {
     }
     set endereco(value:string) {
         this._endereco = value;
+    }
+    set informacoes(value:string) {
+        this._informacoes = value;
     }
 
 }
@@ -54,12 +61,15 @@ AgendaModel.init(
         },
         endereco: {
             type: DataTypes.STRING,
+        },
+        informacoes: {
+            type: DataTypes.STRING,
         }
     },
     {
         sequelize,
         modelName: "agendabd",
-        tableName: "tbl_banco",
+        tableName: "tbl_agenda",
         timestamps: false
     }
 )

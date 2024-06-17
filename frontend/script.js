@@ -1,7 +1,9 @@
 const nameTxt = document.getElementById('name');
 const telTxt = document.getElementById('tel');
 const enderecoTxt = document.getElementById('endereco');
+const informacoesTxt = document.getElementById('informacoes');
 const cadBtn = document.getElementById('cadBtn');
+const alerta = document.getElementById('alerta')
 
 cadBtn.addEventListener('click', function(event) {
 
@@ -10,15 +12,17 @@ cadBtn.addEventListener('click', function(event) {
     document.getElementById('name').value = '';
     document.getElementById('tel').value = '';
     document.getElementById('endereco').value = '';
+    document.getElementById('informacoes').value = '';
 
 })
 
-async function saveContact(name, telefone, endereco) {
+async function saveContact(name, telefone, endereco, informacoes) {
 
     let data = {
         nome: nameTxt.value,
         telefone: telTxt.value,
-        endereco: enderecoTxt.value
+        endereco: enderecoTxt.value,
+        informacoes: informacoesTxt.value
     }
 
     console.log(data)
@@ -34,7 +38,13 @@ async function saveContact(name, telefone, endereco) {
         .then(response => response.json())
         .then(data => {
             console.log('Resposta da API:', data);
-            alert('Dados enviados com sucesso!');
+            alerta.innerHTML= `
+            <div class="alert alert-success d-flex align-items-center" role="alert">
+                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+                <div>
+                  An example success alert with an icon
+                </div>
+            </div>`
         })
         .catch(error => {
             console.error('Erro ao enviar dados:', error);

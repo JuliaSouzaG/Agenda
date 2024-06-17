@@ -16,11 +16,11 @@ function buscarPessoa() {
         });
 
 }
-    const tabela = document.getElementById('tblPessoa');
-    const tbody = tabela.querySelector('tbody');
+
+const tabela = document.getElementById('tblPessoa');
+const tbody = tabela.querySelector('tbody');
     
 function preencherTabela(data) {
-
 
     // Limpa o conteúdo atual da tabela
     tbody.innerHTML = '';
@@ -28,15 +28,32 @@ function preencherTabela(data) {
     // Itera sobre os dados e os insere na tabela
 
     data.forEach(function (pessoa) {
+
         const tr = document.createElement('tr');
         tr.innerHTML = `
         <td>${pessoa.nome}</td>
         <td>${pessoa.telefone}</td>
       `;
+      
+        // tr.setAttribute('onclick', 'teste()')
+        tr.id =  pessoa.id;
         tbody.appendChild(tr);
-
 
     });
 }
+document.querySelectorAll('tr').forEach( function(tr) {
+    
+    tr.addEventListener('click', function(event) {
+
+    const el = event.target
+
+    const id = el.id;
+
+    console.log('oi');
+
+  });
+  
+});
+
 
 buscarPessoa()

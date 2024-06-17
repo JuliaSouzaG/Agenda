@@ -19,7 +19,8 @@ export class AgendaService {
                 id: pessoa.id,
                 nome: pessoa.nome,
                 telefone: pessoa.telefone,
-                endereco: pessoa.endereco
+                endereco: pessoa.endereco,
+                informacoes: pessoa.informacoes
             });
         } catch (erro: any) {
             throw new Error(erro.message);
@@ -60,6 +61,7 @@ export class AgendaService {
                 pessoa.nome = item.nome;
                 pessoa.telefone = item.telefone;
                 pessoa.endereco = item.endereco;
+                pessoa.informacoes = item.informacoes;
                 pessoa.save;
             }
         } catch (erro: any) {

@@ -63,3 +63,6 @@ input, textarea {
     caret-color: #0d6efd;
 }
 
+tr {
+    cursor: pointer;
+}
