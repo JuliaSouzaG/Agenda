@@ -19,7 +19,7 @@ export class AgendaService {
                 id: pessoa.id,
                 nome: pessoa.nome,
                 telefone: pessoa.telefone,
-                endereco: pessoa.endereco,
+                email: pessoa.email,
                 informacoes: pessoa.informacoes
             });
         } catch (erro: any) {
@@ -60,7 +60,7 @@ export class AgendaService {
             if (pessoa) {
                 pessoa.nome = item.nome;
                 pessoa.telefone = item.telefone;
-                pessoa.endereco = item.endereco;
+                pessoa.email = item.email;
                 pessoa.informacoes = item.informacoes;
                 pessoa.save;
             }

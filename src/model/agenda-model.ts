@@ -7,7 +7,7 @@ export class AgendaModel extends Model {
     private _id!: number;
     private _nome!: string;
     private _telefone!: string;
-    private _endereco!: string;
+    private _email!: string;
     private _informacoes!: string;
 
 
@@ -20,8 +20,8 @@ export class AgendaModel extends Model {
     get telefone(): string {
         return this._telefone;
     }
-    get endereco(): string {
-        return this._endereco;
+    get email(): string {
+        return this._email;
     }
     get informacoes(): string {
         return this._informacoes;
@@ -33,8 +33,8 @@ export class AgendaModel extends Model {
     set telefone(value: string) {
         this._telefone = value;
     }
-    set endereco(value:string) {
-        this._endereco = value;
+    set email(value:string) {
+        this._email = value;
     }
     set informacoes(value:string) {
         this._informacoes = value;
@@ -59,7 +59,7 @@ AgendaModel.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        endereco: {
+        email: {
             type: DataTypes.STRING,
         },
         informacoes: {

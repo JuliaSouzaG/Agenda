@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -14,6 +14,8 @@
 
 <body class="bg-dark">
     <div class="centro p-4">
+
+        <!-- btn Voltar e Editar  -->
         <div class="mb-3 d-flex justify-content-between">
             <div>
                 <a href="inicio.html" class="rounded-circle bg-secondary icon-back">
@@ -21,24 +23,27 @@
                 </a>
             </div>
 
-            <a href="../html/edit.html" class="rounded-4 bg-secondary d-flex justify-content-center align-items-center"><span
-                    class="mx-2 text-light">Editar</span></a>
+            <a href="edit.html" class="rounded-4 bg-secondary d-flex justify-content-center align-items-center"><span
+                    class="mx-2 text-light" id="editarBtn">Editar</span></a>
         </div>
-
+        
+        <!-- Foto -->
         <div class="rounded-circle bg-secondary circle mb-3">
-            <span class="fs-3">J</span>
+            <span class="fs-3" id="letraNome"></span>
         </div>
 
-        <div class="text-center mb-4">Julia Guma</div>
+        <!-- Nome -->
+        <div class="text-center mb-4" id="nome"></div>
 
+        <!-- Funcoes (botões) -->
         <div class="d-flex justify-content-between mb-3">
-            <a href="mailto:julia.s.gomes@hotmail.com" target="_blank" class="btn btn-sm btn-dark btns">
+            <a href="mailto:julia.s.gomes@hotmail.com" target="_blank" class="btn btn-sm btn-dark btns" id="emailLink">
                 <div>
                     <i class="bi bi-envelope-fill fs-5"></i>
                 </div>
                 <span>E-mail</span>
             </a>
-            <a href="https://wa.me/5592982402547" target="_blank" class="btn btn-sm btn-dark btns">
+            <a href="https://wa.me/5592982402547" target="_blank" class="btn btn-sm btn-dark btns" id="zap">
                 <div>
                     <i class="bi bi-whatsapp fs-5"></i>
                 </div>
@@ -52,21 +57,23 @@
             </a>
         </div>
 
+        <!-- Infos -->
         <div class="bg-dark p-2 rounded-2 mb-2">
-            <div class="font-tiny">Número</div>
+            <div class="font-tiny">Número</div>  
             <div class="text-primary" id="number"></div>
         </div>
         <div class="bg-dark p-2 rounded-2 mb-2">
             <div class="font-tiny">E-mail</div>
-            <div class="text-primary">fulano@hotmail.com</div>
+            <div class="text-primary" id="emailInfo"></div>
         </div>
         <div class="bg-dark p-2 rounded-2">
             <div class="font-tiny">Informações</div>
-            <div class="">aaaaaaaaaaaaaaaaaa</div>
+            <div id="informacoes"></div>
         </div>
-
     </div>
-    <script src="../inicio.js"></script>
+
+    <script src="../js/inicio.js"></script>
+    <script src="../js/info.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

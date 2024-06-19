@@ -1,28 +1,28 @@
 const nameTxt = document.getElementById('name');
 const telTxt = document.getElementById('tel');
-const enderecoTxt = document.getElementById('endereco');
-const informacoesTxt = document.getElementById('informacoes');
+const emailTxt = document.getElementById('email');
+const infoTxt = document.getElementById('informacoes');
 const cadBtn = document.getElementById('cadBtn');
-const alerta = document.getElementById('alerta')
+const alerta = document.getElementById('alerta');
 
 cadBtn.addEventListener('click', function(event) {
 
-    saveContact(nameTxt, telTxt, enderecoTxt);
+    saveContact(nameTxt, telTxt, emailTxt, infoTxt);
 
-    document.getElementById('name').value = '';
-    document.getElementById('tel').value = '';
-    document.getElementById('endereco').value = '';
-    document.getElementById('informacoes').value = '';
+    nameTxt.value = '';
+    telTxt.value = '';
+    emailTxt.value = '';
+    infoTxt.value = '';
 
 })
 
-async function saveContact(name, telefone, endereco, informacoes) {
+async function saveContact(nome, telefone, email, info) {
 
     let data = {
-        nome: nameTxt.value,
-        telefone: telTxt.value,
-        endereco: enderecoTxt.value,
-        informacoes: informacoesTxt.value
+        nome: nome.value,
+        telefone: telefone.value,
+        email: email.value,
+        informacoes: info.value
     }
 
     console.log(data)
@@ -38,20 +38,15 @@ async function saveContact(name, telefone, endereco, informacoes) {
         .then(response => response.json())
         .then(data => {
             console.log('Resposta da API:', data);
-            alerta.innerHTML= `
-            <div class="alert alert-success d-flex align-items-center" role="alert">
-                <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
-                <div>
-                  An example success alert with an icon
-                </div>
-            </div>`
+            localStorage.setItem('contatoCriado', 'true');
+            location.href='inicio.html';
         })
         .catch(error => {
             console.error('Erro ao enviar dados:', error);
             alert('Erro ao enviar dados. Verifique o console para mais informações.');
         });
 }
-console.log('passando')
+
 
 // function buscarPessoa() {
 //     // Faz a requisição para a API
