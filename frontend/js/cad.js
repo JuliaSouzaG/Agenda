@@ -46,39 +46,3 @@ async function saveContact(nome, telefone, email, info) {
             alert('Erro ao enviar dados. Verifique o console para mais informações.');
         });
 }
-
-
-// function buscarPessoa() {
-//     // Faz a requisição para a API
-//     fetch(`http://localhost:3000/api/agenda/listar`)
-//       .then(response => response.json()) 
-//       .then(data => {
-//         // Preenche a tabela com os dados recebidos
-//         preencherTabela(data);
-//       })
-//       .catch(error => {
-//         console.error('Erro ao obter dados da API:', error);
-//       });
-      
-//   }
-
-// function preencherTabela(data) {
-//     const tabela = document.getElementById('tblPessoa');
-//     const tbody = tabela.querySelector('tbody');
-  
-//     // Limpa o conteúdo atual da tabela
-//     tbody.innerHTML = '';
-  
-//     // Itera sobre os dados e os insere na tabela
-  
-//     data.forEach(function (pessoa) {
-//       const tr = document.createElement('tr');
-//       tr.innerHTML = `
-//         <td>${pessoa.nome}</td>
-//         <td>${pessoa.numero}</td>
-//       `;
-//       tbody.appendChild(tr);
-//     });
-//   }
-
-//   buscarPessoa()
