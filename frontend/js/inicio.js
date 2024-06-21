@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // verifica se houve deleção/ediçao ou exclusão e mostra o toast
     const contatoCriado = localStorage.getItem('contatoCriado')
     const contatoDeletado = localStorage.getItem('contatoDeletado')
+    const contatoEditado = localStorage.getItem('contatoEditado')
     if (contatoCriado) {
         const toastLiveExample = document.getElementById('criarToast')
         const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
@@ -21,6 +22,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         toastBootstrap.show()
 
         localStorage.removeItem('contatoDeletado')
+    }
+    if (contatoEditado) {
+        const toastLiveExample = document.getElementById('editToast')
+        const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+        toastBootstrap.show()
+
+        localStorage.removeItem('contatoEditado')
     }
 
     function buscarPessoa() {

@@ -11,9 +11,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('letraNome').innerHTML = `${letraNome}`;
         document.getElementById('emailInfo').innerText = `${pessoa.email}`;
         document.getElementById('informacoes').innerText = `${pessoa.informacoes}`;
+        document.getElementById('call').setAttribute('href', `sms:${pessoa.telefone}`);
         const tel = pessoa.telefone.replace(/[^a-z0-9]/gi,'');
-        document.getElementById('zap').setAttribute('href', `https://wa.me/55${tel}`);
+        document.getElementById('zap').setAttribute('href', `https://wa.me/+55${tel}`);
         document.getElementById('emailLink').setAttribute('href', `mailto:${pessoa.email}`);
+        
         
        
     } else {
