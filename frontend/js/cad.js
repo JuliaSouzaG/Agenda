@@ -5,15 +5,16 @@ const infoTxt = document.getElementById('informacoes');
 const cadBtn = document.getElementById('cadBtn');
 const alerta = document.getElementById('alerta');
 
-cadBtn.addEventListener('click', function(event) {
-
-    saveContact(nameTxt, telTxt, emailTxt, infoTxt);
-
-    nameTxt.value = '';
-    telTxt.value = '';
-    emailTxt.value = '';
-    infoTxt.value = '';
-
+cadBtn.addEventListener('click', function (event) {
+    if (nameTxt.value === '' || telTxt.value === '') {
+        console.log('espere')
+    } else {
+        saveContact(nameTxt, telTxt, emailTxt, infoTxt);
+        nameTxt.value = '';
+        telTxt.value = '';
+        emailTxt.value = '';
+        infoTxt.value = '';
+    }
 })
 
 async function saveContact(nome, telefone, email, info) {
@@ -39,7 +40,7 @@ async function saveContact(nome, telefone, email, info) {
         .then(data => {
             console.log('Resposta da API:', data);
             localStorage.setItem('contatoCriado', 'true');
-            location.href='inicio.html';
+            location.href = 'inicio.html';
         })
         .catch(error => {
             console.error('Erro ao enviar dados:', error);

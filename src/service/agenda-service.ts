@@ -62,7 +62,7 @@ export class AgendaService {
                 pessoa.telefone = item.telefone;
                 pessoa.email = item.email;
                 pessoa.informacoes = item.informacoes;
-                pessoa.save;
+                pessoa.save();
             }
         } catch (erro: any) {
             throw new Error(erro.message);

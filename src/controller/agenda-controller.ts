@@ -29,6 +29,26 @@ export class AgendaController {
         res.status(200).json(agendas)
     }
 
+    public async listarPorNome(req: Request, res: Response) {
+        const nome: string = req.query.nome as string;
+        if (!nome) { // se não achar parâmetro 
+            res.status(400).json({ message: 'Parâmetro de busca não informado' });
+            return
+        }
+
+        try {
+            const pessoa = await this.agendaService.listarPorNome(nome);
+            if (pessoa) {
+                res.status(200).json({ pessoa });
+            } else {
+                res.status(204).json({ message: 'Banco não encontrado ' });
+            }
+
+        } catch (erro: any) {
+            res.status(500).json({ message: erro.message });
+        }
+    }
+
     public async alterar(req: Request, res: Response) {
         //garante que a requisição esteja correta
         if (!req.query.id) {

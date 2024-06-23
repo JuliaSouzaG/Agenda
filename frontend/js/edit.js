@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 })
         })
 
+
         document.getElementById('btnEditar').addEventListener('click', function () {
             // Obtém os novos valores dos campos
             const novoNome = document.getElementById('editNome');
@@ -67,9 +68,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         return response.json();
                     })
                     .then((data) => {
+                        localStorage.setItem('contatoEditado', 'true'); // armazena no localstorage que houve edição
+                        location.href='inicio.html'; // redireciona para a página inicial
                         console.log(data);
-                        localStorage.setItem('contatoEditado', 'true');
-                        location.href('inicio.html'); // Atualiza a lista após editar
                     })
                     .catch((error) => {
                         console.error('Erro ao editar banco:', error);

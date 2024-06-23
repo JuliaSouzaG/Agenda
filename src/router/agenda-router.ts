@@ -25,6 +25,9 @@ export class AgendaRouter {
         this.router.delete('/deletar', (req, res) => {
             this.agendaController.excluir(req, res);
         });
+        this.router.get('/listarnome', (req, res) => {
+            this.agendaController.listarPorNome(req, res);
+        });
     }
 
     get Router(): Router {
