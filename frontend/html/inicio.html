@@ -21,17 +21,17 @@
     <body class="bg-dark">
         <div class="centro p-4">
             <div class="mb-3">
-                <span class="fs-3 fw-bolder">Agenda</span>
+                <a class="fs-3 fw-bolder text-light" href="inicio.html">Agenda</a>
                 <a href="../html/cad.html"
                     ><i class="bi bi-plus text-primary float-end fs-2"></i
                 ></a>
             </div>
 
             <!-- Pesquisar -->
-            <div class="bg-dark d-flex py-1 rounded-3 px-2 mb-3">
-                <i class="bi bi-search text-secondary me-2 rounded-3"></i>
-                <input type="text" class="input-search bg-dark w-100" placeholder="Search" />
-                <button class="btn btn-primary" id="btnPesquisar">Pesquisar</button>
+            <div class="bg-dark d-flex py-1 rounded-3 px-2 mb-3 align-items-center">
+                
+                <input type="text" class="input-search bg-dark w-100" autocomplete="off" placeholder="Search" id="nomeSearch" />
+                <button class="btn" id="btnPesquisar"><i class="bi bi-search text-secondary me-2 rounded-3"></i></button>
             </div>
 
             <!-- Tabela -->
